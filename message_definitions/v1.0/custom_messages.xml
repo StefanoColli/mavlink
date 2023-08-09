@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<mavlink>
+
+<!-- Mavlink dialect to be able to send and receive custom uORB topics using Mavlink protocol -->
+
+  <include>development.xml</include>
+  <dialect>8</dialect>
+
+    <messages>
+      <message id="444" name="CONTROL_TYPE">
+        <description>Set the desired control approach.</description>
+        <field type="uint8_t" name="control_type">Control method to be used (0 = PID, 1 = HOSM)</field>
+      </message>
+    </messages>
+
+</mavlink>
