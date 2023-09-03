@@ -11,6 +11,26 @@
         <description>Set the desired control approach.</description>
         <field type="uint8_t" name="control_type">Control method to be used (0 = PID, 1 = HOSM)</field>
       </message>
+
+       <message id="445" name="TRAJECTORY_VECTOR">
+        <description>State vector of the desired trajectory: 
+                      [x, x_dot, x_2dot, x_3dot, y, y_dot, y_2dot, y_3dot, z, z_dot, z_2dot, z_3dot, psi, psi_dot].</description>
+
+        <field type="float" name="x" units="m">Target position setpoint along x-direction</field>
+        <field type="float" name="x_dot" units="m/s">Target velocity setpoint along x-direction</field>
+        <field type="float" name="x_2dot" units="m/s^2">Target acceleration setpoint along x-direction</field>
+        <field type="float" name="x_3dot" units="m/s^3">Target jerk setpoint along x-direction</field>
+        <field type="float" name="y" units="m">Target position setpoint along y-direction</field>
+        <field type="float" name="y_dot" units="m/s">Target velocity setpoint along y-direction</field>
+        <field type="float" name="y_2dot" units="m/s^2">Target acceleration setpoint along y-direction</field>
+        <field type="float" name="y_3dot" units="m/s^3">Target jerk setpoint along y-direction</field>
+        <field type="float" name="z" units="m">Target position setpoint along z-direction</field>
+        <field type="float" name="z_dot" units="m/s">Target velocity setpoint along z-direction</field>
+        <field type="float" name="z_2dot" units="m/s^2">Target acceleration setpoint along z-direction</field>
+        <field type="float" name="z_3dot" units="m/s^3">Target jerk setpoint along z-direction</field>
+        <field type="float" name="psi" units="rad">Target orientation setpoint</field>
+        <field type="float" name="psi_dot" units="rad/s">Target angular rate setpoint</field>
+      </message>
     </messages>
 
 </mavlink>
