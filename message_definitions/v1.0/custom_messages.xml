@@ -12,8 +12,8 @@
         <field type="uint8_t" name="control_type">Control method to be used (0 = PID, 1 = HOSM)</field>
       </message>
 
-       <message id="445" name="TRAJECTORY_VECTOR">
-        <description>State vector of the desired trajectory: 
+      <message id="445" name="NOMINAL_STATES_VECTOR">
+        <description>Nominal states vector of the trajectory: 
                       [x, x_dot, x_2dot, x_3dot, y, y_dot, y_2dot, y_3dot, z, z_dot, z_2dot, z_3dot, psi, psi_dot].</description>
 
         <field type="float" name="x" units="m">Target position setpoint along x-direction</field>
@@ -30,6 +30,11 @@
         <field type="float" name="z_3dot" units="m/s^3">Target jerk setpoint along z-direction</field>
         <field type="float" name="psi" units="rad">Target orientation setpoint</field>
         <field type="float" name="psi_dot" units="rad/s">Target angular rate setpoint</field>
+      </message>
+
+      <message id="446" name="NOMINAL_INPUTS_VECTOR">
+        <description>Nominal inputs vector containing highest order derivatives of the differential output vector to be sent to the HOSM controller.</description>
+        <field type="float[4]" name="nominal_inputs_vector">[x_4dot, y_4dot, z_4dot, psi_2dot]
       </message>
     </messages>
 
